@@ -1,7 +1,7 @@
 /*** 
  * @Author: baisichen
  * @Date: 2022-10-25 23:37:29
- * @LastEditTime: 2022-10-26 00:34:45
+ * @LastEditTime: 2023-02-27 13:38:04
  * @LastEditors: baisichen
  * @Description: 逻辑单元状态机代码示例，类似于编译中的自动机
  */
@@ -61,8 +61,8 @@ LINE_STATUS parse_line(char* buffer, int& checked_index, int& read_index) {
                buffer[checked_index++] = '\0';
                return LINE_OK;
            }
+           return LINE_BAD;
        }
-       return LINE_BAD;
    }
    //如果所有内容都分析完毕也没遇到\r字符，则返回LINE_OPEN, 表示还需要继续读取客户数据才能进一步分析
    return LINE_OPEN;

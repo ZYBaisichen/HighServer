@@ -1,7 +1,7 @@
 /*** 
  * @Author: baisichen
  * @Date: 2022-10-18 16:31:59
- * @LastEditTime: 2022-10-19 11:53:28
+ * @LastEditTime: 2022-11-03 17:39:11
  * @LastEditors: baisichen
  * @Description: 第一个socket服务器
  */
@@ -93,6 +93,7 @@ int main(int argc, char *argv[])
 
         char buffer[BUF_SIZE];
         memset(buffer, '\0', BUF_SIZE);
+        printf("prepare recv data\n");
         ret = recv(connfd, buffer, BUF_SIZE - 1, 0);
         printf("got %d bytes of normal data '%s'\n", ret, buffer);
 
